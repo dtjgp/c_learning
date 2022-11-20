@@ -3,14 +3,14 @@
 int main()
 {
     int n;
-
+    int i;
+    double sum = 0.0;
     scanf("%d", &n);
-    int factor = 1;
-    int i = 1;
+
     for (i = 1; i <= n; i++)
     {
-        factor = factor * i;
+        sum = sum + 1.0 / i;
     }
-    printf("The factorial of %d is %d\n", n, factor);
+    printf("f(%d) = %f\n", n, sum);
     return 0;
 }
