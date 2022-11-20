@@ -1,46 +1,37 @@
 #include <stdio.h>
 
+int isPrime(int i)
+{
+    int ret = 1;
+    int k;
+    for (k=2; k<i; k++)
+    {
+        if (i%k == 0)
+        {
+            ret = 0;
+            break;
+        }
+    }
+    return ret;
+}
+
 int main()
 {
-    int a;
-    scanf("%d", &a);
-    int i,j,k;
+    int m, n;
+    int sum = 0;
     int cnt = 0;
-    i = a;
-    while (i <= a+3)
+    int i;
+
+    scanf("%d %d", &m, &n);
+    if (m == 1) m = 2;
+    for (i=m; i<=n; i++)
     {
-        j = a;
-        while (j<=a+3)
+        if (isPrime(i))
         {
-            k = a;
-            while (k<=a+3)
-            {
-                if (i!=j)
-                {
-                    if (j!=k)
-                    {
-                        if (i!=k)
-                        {
-                            cnt ++;
-                            printf("%d%d%d", i, j, k);
-                            if (cnt == 6)
-                            {
-                                printf("\n");
-                                cnt = 0;
-                            }
-                            else
-                            {
-                                printf(" ");
-                            }
-                        }
-                    }
-                }
-                k++;
-            }
-            j++;
+            sum += i;
+            cnt++;
         }
-        i++;
     }
- 
+    printf("%d %d\n", cnt, sum);
     return 0;
 }
