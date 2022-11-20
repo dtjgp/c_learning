@@ -2,15 +2,45 @@
 
 int main()
 {
-    int n;
-
-    scanf("%d", &n);
-    int factor = 1;
-    int i = 1;
-    for (i = 1; i <= n; i++)
+    int a;
+    scanf("%d", &a);
+    int i,j,k;
+    int cnt = 0;
+    i = a;
+    while (i <= a+3)
     {
-        factor = factor * i;
+        j = a;
+        while (j<=a+3)
+        {
+            k = a;
+            while (k<=a+3)
+            {
+                if (i!=j)
+                {
+                    if (j!=k)
+                    {
+                        if (i!=k)
+                        {
+                            cnt ++;
+                            printf("%d%d%d", i, j, k);
+                            if (cnt == 6)
+                            {
+                                printf("\n");
+                                cnt = 0;
+                            }
+                            else
+                            {
+                                printf(" ");
+                            }
+                        }
+                    }
+                }
+                k++;
+            }
+            j++;
+        }
+        i++;
     }
-    printf("The factorial of %d is %d\n", n, factor);
+ 
     return 0;
 }
