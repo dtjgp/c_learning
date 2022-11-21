@@ -1,17 +1,18 @@
- #include <stdio.h>
+#include <stdio.h>
 
- void f(int *p);
+int main(void)
+{
+    int i = 0;
+    char *s = "hello world";
+    //s[0] = 'B';
+    char *s2 = "hello world";
+    char s3[] = "hello world";
 
- int main(void)
- {
-     int a = 10;
-     printf("&a = %p\n", &a);
-     f(&a);
-     
-     return 0;
- }
-
- void f(int *p)
- {
-     printf("p = %p\n", p);
- }
+    printf("&i = %p\n", &i);
+    printf("s = %p\n", s);
+    printf("s2 = %p\n", s2);
+    printf("s3 = %p\n", s3);
+    s3[0] = 'b';
+    printf("Here!s3[0]=%c\n", s3[0]);
+    return 0;
+}
