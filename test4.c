@@ -1,47 +1,29 @@
 #include <stdio.h>
 
-int isPrime();
+int divide(int a, int b, int *result);
 
 int main(void)
 {
-    const int number = 100;
-    int prime[number] = {2};
-    int count = 1;
-    int i = 3;
-    while (count < number)
+    int a = 5;
+    int b = 2;
+    int c;
+    if (divide(a, b, &c))
     {
-        if (isPrime(i, prime, count))
-        {
-            prime[count] = i;
-            prime[count++] = i;
-        }
-        i++;
-    }
-    for (int i = 0; i < number; i++)
-    {
-        printf("%d ", prime[i]);
-        if ((i + 1) % 5 == 0)
-        {
-            printf("\t");
-        }
-        else
-        {
-            printf("\n");
-        }
+        printf("%d / %d = %d\n", a, b, c);
     }
     return 0;
 }
-int isPrime(int x, int prime[], int count)
+
+int divide(int a, int b, int *result)
 {
     int ret = 1;
-    int i;
-    for (int i = 0; i < count; i++)
+    if (b == 0)
     {
-        if (x % prime[i] == 0)
-        {
-            ret = 0;
-            break;
-        }
+        ret = 0;
+    }
+    else
+    {
+        *result = a / b;
     }
     return ret;
-}
+}  

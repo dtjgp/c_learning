@@ -1,30 +1,26 @@
-#include <stdio.h>
+ #include <stdio.h>
 
-int main()
-{
-    int x;
-    double sum = 0;
-    int cnt = 0;
-    int number[100];
-    scanf("%d", &x);
-    while(x != -1)
-    {
-        number[cnt] = x;
-        sum += x;
-        cnt++;
-        scanf("%d", &x);
-    }
-    if (cnt > 0)
-    {
-        printf("average is %f\n", sum/cnt);
-        int i;
-        for (i = 0; i < cnt; i++)
-        {
-            if (number[i] > sum/cnt)
-            {
-                printf("%d\n ", number[i]);
-            }
-        }
-    }
-    return 0;
-}
+ void f(int *p);
+ void g(int k);
+
+ int main(void)
+ {
+     int a = 10;
+     printf("&a = %p\n", &a);
+     f(&a);
+     g(a);
+     
+     return 0;
+ }
+
+ void f(int *p)
+ {
+     printf("p = %p\n", p);
+     printf("*p = %d\n", *p);
+     *p = 20;
+ }
+ 
+ void g(int k)
+ {
+     printf("k = %d\n", k);
+ }

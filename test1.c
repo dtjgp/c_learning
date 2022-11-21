@@ -1,20 +1,17 @@
-#include <stdio.h>
+ #include <stdio.h>
 
-int main()
-{
-    int x;
-    double sum = 0;
-    int cnt = 0;
-    scanf("%d", &x);
-    while(x != -1)
-    {
-        sum += x;
-        cnt++;
-        scanf("%d", &x);
-    }
-    if (cnt > 0)
-    {
-        printf("average is %f\n", sum/cnt);
-    }
-    return 0;
-}
+ void f(int *p);
+
+ int main(void)
+ {
+     int a = 10;
+     printf("&a = %p\n", &a);
+     f(&a);
+     
+     return 0;
+ }
+
+ void f(int *p)
+ {
+     printf("p = %p\n", p);
+ }
