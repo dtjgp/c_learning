@@ -1,21 +1,8 @@
-#include  <stdio.h>
-
-int f(void);
-
-int gAll = 12;
+#include <stdio.h>
 
 int main(int argc, char const *argv[])
 {
-    printf("in %s gAll = %d\n", __func__, gAll);
-    f();
-    printf("in %s gAll = %d\n", __func__, gAll);
-
+    printf("%9d\n", 123);
+    printf("%-9d\n", 123);
     return 0;
-}
-int f(void)
-{
-    printf("in %s gAll = %d\n", __func__, gAll);
-    gAll += 2;
-    printf("in %s gAll = %d\n",  __func__, gAll);
-    return gAll;
 }

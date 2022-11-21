@@ -1,9 +1,18 @@
 #include <stdio.h>
 
-#define PI 3.14159
-
 int main(int argc, char const *argv[])
 {
-    printf("PI = %f\n", PI);
+    FILE *fp = fopen("13.in", "r");
+    if (fp)
+    {
+        int num;
+        fscanf(fp, "%d", &num);
+        printf("%d\n", num);
+        fclose(fp);
+    }
+    else
+    {
+        printf("File not found!\n");
+    }
     return 0;
 }
