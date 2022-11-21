@@ -1,18 +1,29 @@
-#include <stdio.h>
+//常量符号化
+#include  <stdio.h>
 
-int main(void)
+const int red = 0;
+const int yellow = 1;
+const int green = 2;
+
+int main(int argc, char const *argv[])
 {
-    int i = 0;
-    char *s = "hello world";
-    //s[0] = 'B';
-    char *s2 = "hello world";
-    char s3[] = "hello world";
-
-    printf("&i = %p\n", &i);
-    printf("s = %p\n", s);
-    printf("s2 = %p\n", s2);
-    printf("s3 = %p\n", s3);
-    s3[0] = 'b';
-    printf("Here!s3[0]=%c\n", s3[0]);
+    int color = -1;
+    char *colorName = NULL;
+    printf("Enter a color (0-red, 1-yellow, 2-green): ");
+    scanf("%d", &color);
+    switch (color)
+    {
+    case red:
+        colorName = "red";
+        break;
+    case yellow:
+        colorName = "yellow";
+        break;
+    case green:
+        colorName = "green";
+        break;
+    }
+    printf("your favorite color is %s\n", colorName);
+    
     return 0;
 }

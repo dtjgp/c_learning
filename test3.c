@@ -1,15 +1,19 @@
-#include <stdio.h>
+#include  <stdio.h>
 
-int main(int argc, char const *argv[])
+enum COLOR {red, yellow, green};
+
+void f(enum COLOR c);
+
+int main(void)
 {
-    int ch;
-    
-    while ((ch = getchar()) != EOF)
-    {
-        
-        putchar(ch);
-    }
-    printf("EOF\n");
+    enum COLOR t = red;
+    scanf("%d", &t);
+    f(t);
     
     return 0;
+}
+
+void f(enum COLOR c)
+{
+    printf("%d\n", c);
 }
