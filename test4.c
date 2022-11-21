@@ -1,29 +1,9 @@
 #include <stdio.h>
 
-int divide(int a, int b, int *result);
+#define cube(x) (x*x*x)
 
-int main(void)
+int main(int argc, char const *argv[])
 {
-    int a = 5;
-    int b = 2;
-    int c;
-    if (divide(a, b, &c))
-    {
-        printf("%d / %d = %d\n", a, b, c);
-    }
+    printf("cube = %d\n", cube(5));
     return 0;
 }
-
-int divide(int a, int b, int *result)
-{
-    int ret = 1;
-    if (b == 0)
-    {
-        ret = 0;
-    }
-    else
-    {
-        *result = a / b;
-    }
-    return ret;
-}  

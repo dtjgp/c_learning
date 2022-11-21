@@ -1,19 +1,9 @@
-#include  <stdio.h>
+#include <stdio.h>
 
-enum COLOR {red, yellow, green};
+#define PI 3.14159
 
-void f(enum COLOR c);
-
-int main(void)
+int main(int argc, char const *argv[])
 {
-    enum COLOR t = red;
-    scanf("%d", &t);
-    f(t);
-    
+    printf("PI = %f\n", PI);
     return 0;
-}
-
-void f(enum COLOR c)
-{
-    printf("%d\n", c);
 }
