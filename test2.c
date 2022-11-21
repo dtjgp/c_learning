@@ -2,41 +2,29 @@
 
 int main()
 {
-    int n;
-    scanf("%d", &n);
-    int first = 1;
-    int i = 1;
-    while(i<n)
+    int x;
+    double sum = 0;
+    int cnt = 0;
+    int number[100];
+    scanf("%d", &x);
+    while(x != -1)
     {
-        first *= 10; 
-        i++;
+        number[cnt] = x;
+        sum += x;
+        cnt++;
+        scanf("%d", &x);
     }
-
-    i = first;
-    while (i < first*10)
+    if (cnt > 0)
     {
-        int t = i;
-        int sum = 0;
-        while (t>0)
+        printf("average is %f\n", sum/cnt);
+        int i;
+        for (i = 0; i < cnt; i++)
         {
-            int d = t%10;
-            t /= 10;
-            int p = 1;
-            int j = 0;
-            while (j<n)
+            if (number[i] > sum/cnt)
             {
-                p *= d;  
-                j++;
+                printf("%d\n ", number[i]);
             }
-            sum += p;
         }
-        if (sum == i)
-        {
-            printf("%d\n", i);
-        }
-        i++;
     }
-    
-
     return 0;
 }
